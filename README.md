@@ -90,3 +90,6 @@ And finally, deploy!
        ...
 
 	-----> Done.
+
+
+Note: In the future, when we grow and scale or multiply, for best practice we should use something like puppet/chef/ansible/salt, where we can create a recipe/manifest that able to provision many nodes on the fly. Where our manifest is portable.

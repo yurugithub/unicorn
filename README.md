@@ -36,6 +36,7 @@ $ mina init
 Created config/deploy.rb.
 
 Make sure to add your project’s folder inside ‘/home/deploy’. 
+
 For instance, ‘/home/deploy/YOUR_APP’.
 
 See [deploy.rb](../master/deploy.rb) file for example tweaked setup.

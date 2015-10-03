@@ -20,17 +20,17 @@ We will use [Mina](http://nadarei.co/mina/). A really fast deployer and server a
 
 Add it to your Gemfile.
 
-**gem 'mina'**
+gem 'mina'
 
 Let’s also add two other gems that will help us manage Unicorn and Sidekiq
 
-__gem 'mina-sidekiq', :require => false__
-__gem 'mina-unicorn', :require => false__
+gem 'mina-sidekiq', :require => false
+gem 'mina-unicorn', :require => false
 
 Create the necessary [“deploy.rb”](../master/deploy.rb):
 
 
-__$ mina init__
+$ mina init
 Created config/deploy.rb.
 
 Make sure to add your project’s folder inside ‘/home/deploy’. 
@@ -41,5 +41,5 @@ See [deploy.rb](../master/deploy.rb) file for example tweaked setup.
 
 Ok, let’s run that setup task to create the necessary folders and files on your server. If one doesn’t get created that you need, no worries. Just SSH back in there and create the folder yourself.
 
-__$ mina setup__
+$ mina setup
 -----> Creating folders... done.

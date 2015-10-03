@@ -47,7 +47,7 @@ Ok, let’s run that setup task to create the necessary folders and files on you
 
 `$ mina setup`
 
------> Creating folders... done.
+	-----> Creating folders... done.
 
 #### Set Up database.yml and secrets.yml
 
@@ -81,7 +81,7 @@ And finally, deploy!
 
 `$ mina deploy`
 
-	-----> Deploying to 2012-06-12-040248
+	-----> Deploying to 2015-10-04-040248
 
        ...
 

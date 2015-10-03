@@ -21,18 +21,18 @@ We will use [Mina](http://nadarei.co/mina/). A really fast deployer and server a
 
 Add it to your Gemfile.
 
-gem 'mina'
+`gem 'mina'`
 
 Let’s also add two other gems that will help us manage Unicorn and Sidekiq
 
-gem 'mina-sidekiq', :require => false
+`gem 'mina-sidekiq', :require => false`
 
-gem 'mina-unicorn', :require => false
+`gem 'mina-unicorn', :require => false`
 
 Create the necessary [“deploy.rb”](../master/deploy.rb):
 
 
-$ mina init
+`$ mina init`
 
 Created config/deploy.rb.
 
@@ -45,7 +45,7 @@ See [deploy.rb](../master/deploy.rb) file for example tweaked setup.
 
 Ok, let’s run that setup task to create the necessary folders and files on your server. If one doesn’t get created that you need, no worries. Just SSH back in there and create the folder yourself.
 
-$ mina setup
+`$ mina setup`
 
 -----> Creating folders... done.
 
@@ -53,20 +53,21 @@ $ mina setup
 
 Let’s get back on your Droplet and set up your database.yml and secrets.yml files:
 
-$ ssh deploy@YOUR_IP
+`$ ssh deploy@YOUR_IP`
 
-$ nano /home/deploy/YOUR_APP/shared/config/database.yml
+`$ nano /home/deploy/YOUR_APP/shared/config/database.yml`
 
 Tweak that file:
 
-`production:
-  adapter: postgresql
-  encoding: unicode
-  database: APPNAME_production
-  username: postgres
-  password: DB_PASSWORD_SET_ABOVE
-  host: localhost
-`
+    production:
+    	adapter: postgresql
+    	encoding: unicode
+    	database: APPNAME_production
+    	username: postgres
+    	password: DB_PASSWORD_SET_ABOVE
+    	host: localhost
+
+
 …and your secrets.yml…
 
 `nano /home/deploy/YOUR_APP/shared/config/secrets.yml`

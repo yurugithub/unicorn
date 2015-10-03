@@ -54,21 +54,22 @@ $ mina setup
 Let’s get back on your Droplet and set up your database.yml and secrets.yml files:
 
 $ ssh deploy@YOUR_IP
+
 $ nano /home/deploy/YOUR_APP/shared/config/database.yml
 
 Tweak that file:
 
-production:
+`production:
   adapter: postgresql
   encoding: unicode
   database: APPNAME_production
   username: postgres
   password: DB_PASSWORD_SET_ABOVE
   host: localhost
-
+`
 …and your secrets.yml…
 
-nano /home/deploy/YOUR_APP/shared/config/secrets.yml
+`nano /home/deploy/YOUR_APP/shared/config/secrets.yml`
 
 production:
   secret_key_base: RUN `rake secret` TO GENERATE A KEY

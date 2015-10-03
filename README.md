@@ -73,4 +73,4 @@ Tweak that file:
 `nano /home/deploy/YOUR_APP/shared/config/secrets.yml`
 
     production:
-        secret_key_base: RUN [`rake secret`] TO GENERATE A KEY
+        secret_key_base: RUN 'rake secret' TO GENERATE A KEY

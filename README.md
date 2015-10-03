@@ -74,3 +74,14 @@ Tweak that file:
 
     production:
         secret_key_base: RUN 'rake secret' TO GENERATE A KEY
+
+#### Deploying
+
+And finally, deploy!
+
+`$ mina deploy`
+-----> Deploying to 2012-06-12-040248
+       ...
+       Lots of things happening...
+       ...
+-----> Done.

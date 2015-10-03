@@ -80,8 +80,13 @@ Tweak that file:
 And finally, deploy!
 
 `$ mina deploy`
+
 -----> Deploying to 2012-06-12-040248
+
        ...
+
        Lots of things happening...
+
        ...
+
 -----> Done.

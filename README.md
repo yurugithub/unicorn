@@ -81,7 +81,7 @@ And finally, deploy!
 
 `$ mina deploy`
 
------> Deploying to 2012-06-12-040248
+	-----> Deploying to 2012-06-12-040248
 
        ...
 
@@ -89,4 +89,4 @@ And finally, deploy!
 
        ...
 
------> Done.
+	-----> Done.

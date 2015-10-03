@@ -24,22 +24,22 @@ Add it to your Gemfile.
 
 Let’s also add two other gems that will help us manage Unicorn and Sidekiq
 
-**gem 'mina-sidekiq', :require => false**
-**gem 'mina-unicorn', :require => false**
+__gem 'mina-sidekiq', :require => false__
+__gem 'mina-unicorn', :require => false__
 
-Create the necessary [“deploy.rb”]:(../blob/master/deploy.rb)
+Create the necessary [“deploy.rb”](../master/deploy.rb):
 
 
-**$ mina init**
+__$ mina init__
 Created config/deploy.rb.
 
 Make sure to add your project’s folder inside ‘/home/deploy’. 
 For instance, ‘/home/deploy/YOUR_APP’.
 
-See [deploy.rb](../blob/master/deploy.rb) file for example tweaked setup.
+See [deploy.rb](../master/deploy.rb) file for example tweaked setup.
 
 
 Ok, let’s run that setup task to create the necessary folders and files on your server. If one doesn’t get created that you need, no worries. Just SSH back in there and create the folder yourself.
 
-**$ mina setup**
+__$ mina setup__
 -----> Creating folders... done.

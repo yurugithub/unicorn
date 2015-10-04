@@ -136,6 +136,62 @@ Boot ‘er up and make sure you can get to the Redis console:
 
 If you’re just using Redis for Sidekiq, you’re done. However, Redis is a pretty powerful datastore. For more, check out [Redis in Action](http://www.amazon.com/gp/product/1617290858/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1617290858&linkCode=as2&tag=mccblo-20&linkId=TQKIMJDHQC5UANZL).
 
+
+#### Nginx
+
+If you don’t know Nginx well. Don't be ashamed. Everyone was there at some point. 
+
+Install Nginx:
+
+`$ sudo apt-get install nginx`
+
+`$ sudo service nginx start`
+
+You should now be able to view Nginx’s welcome page by visiting your box public IP in your browser.
+
+You can also check to make sure Nginx is running:
+
+`$ ps ax | grep nginx`
+
+Now we can get Nginx set up to point to our (upcoming) Rails install. Let’s open up the nginx.conf file:
+
+`nano /etc/nginx/nginx.conf`
+
+Here’s the config I ended up with: [nginx.conf](../master/nginx.conf)
+
+Here’s my setup. I’m running SSL, so there are two server blocks. The “listen 80” block takes any non-http request and redirects to the other server block. The second block is for “listen 443” (SSL). If you don’t want/need SSL, you can remove the first server block and swap out 443 to 80 in the second block. You’ll want to remove the ssl_certificate lines, too.
+
+`nano /etc/nginx/sites-enabled/default`
+
+You can use my server block setting here:  [default](../master/default)
+
+
+#### Unicorn
+
+I’m going to assume you know what Unicorn is and why you should use it. 
+
+Install Unicorn
+
+Now we are ready to install Unicorn.
+
+An easy way to do this is to add it to your application's Gemfile. Open the Gemfile in your favorite editor (make sure you are in your application's root directory):
+
+`$nano Gemfile`
+
+At the end of the file, add the Unicorn gem with this line:
+
+`$gem 'unicorn'`
+
+Save and exit.
+
+To install Unicorn, and any outstanding dependencies, run Bundler:
+
+`$bundle`
+
+Unicorn is now installed, but we need to configure it.
+
+Here’s my [unicorn.rb](../master/unicorn.rb) Rails initializer (config/unicorn.rb)
+
 #### MINA
 
 We will use [Mina](http://nadarei.co/mina/). A really fast deployer and server automation tool

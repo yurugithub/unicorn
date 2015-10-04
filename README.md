@@ -20,7 +20,9 @@ Here’s what we’ll be covering:
 It’s not good practice to use your root user to handle deployments, so let’s first start by adding a “deploy” user.
 
 `$ ssh root@YOUR_BOX_IP`
+
 `$ sudo adduser deploy`
+
 `$ su deploy`
 
 #### SSH Keys
@@ -37,24 +39,31 @@ There is a better way to ruby than using RVM. Please use Rbenv. Let’s get it i
 First, some dependencies:
 
 `$ sudo apt-get update`
+
 `$ sudo apt-get install curl git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libcurl4-openssl-dev libxml2-dev libxslt1-dev python-software-properties`
 
 Now, we’ll install rbenv into your home directory and add some commands to your .bashrc for completution and shims.
 
 `$ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv`
+
 `$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc`
+
 `$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc`
 
 Now, let’s restart the shell and make sure Rbenv is install:
 
 `$ exec $SHELL`
+
 `$ type rbenv`
+
 `#=> "rbenv is a function"`
 
 Time to install Ruby!
 
 `$ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build`
+
 `$ rbenv install 2.1.2`
+
 `$ rbenv global 2.1.2`
 
 This part may take awhile. Go grab a coffee.
@@ -64,11 +73,13 @@ Ok, done?
 Let’s make sure all is well…
 
 `$ ruby -v`
+
 `ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-linux]`
 
 If it’s not working, you’ll probably see this:
 
 `$ ruby -v`
+
 `The program 'ruby' can be found in the following packages:
  * ruby
  * ruby1.8

@@ -80,10 +80,10 @@ If it’s not working, you’ll probably see this:
 
 `$ ruby -v`
 
-`The program 'ruby' can be found in the following packages:
- * ruby
- * ruby1.8
-Try: apt-get install <selected package>`
+    `The program 'ruby' can be found in the following packages:
+    * ruby
+    * ruby1.8
+    Try: apt-get install <selected package>`
 
 ^ That’s not good. Re-visit the instructions above and don’t proceed until you get Ubuntu figuring out where Ruby is.
 
@@ -92,6 +92,49 @@ One last step that always trips people up: install Bundler real quick.
 `$ gem install bundler`
 
 You’ll thank me later…
+
+#### PostgreSQL
+
+Use MySQL if you must, but I ain’t helping you there. Let’s set up PostgreSQL.
+
+Don’t try and get fancy with other DB users. Just use the built-in ‘postgres’ user.
+
+`$ sudo apt-get install postgresql postgresql-contrib`
+
+`$ createuser --pwprompt`
+
+Create your database:
+
+`$ su postgres`
+
+`$ psql`
+    psql (9.3.5)
+    Type "help" for help.
+
+    postgres=# CREATE DATABASE yourapp_production;
+
+
+#### Memcache, and Redis
+
+These two are a piece of cake. Thanks, ‘apt-get’
+
+Memcache
+
+`$ sudo apt-get install memcached`
+
+And Redis (for Sidekiq and other fun stuff)
+
+`$ apt-get install redis-server`
+
+Boot ‘er up and make sure you can get to the Redis console:
+
+`$ redis-server /etc/redis/redis.conf`
+
+`$ redis-cli`
+
+`127.0.0.1:6379>`
+
+If you’re just using Redis for Sidekiq, you’re done. However, Redis is a pretty powerful datastore. For more, check out [Redis in Action](http://www.amazon.com/gp/product/1617290858/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1617290858&linkCode=as2&tag=mccblo-20&linkId=TQKIMJDHQC5UANZL).
 
 #### MINA
 

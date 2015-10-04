@@ -176,17 +176,17 @@ Now we are ready to install Unicorn.
 
 An easy way to do this is to add it to your application's Gemfile. Open the Gemfile in your favorite editor (make sure you are in your application's root directory):
 
-`$nano Gemfile`
+`$ nano Gemfile`
 
 At the end of the file, add the Unicorn gem with this line:
 
-`$gem 'unicorn'`
+`gem 'unicorn'`
 
 Save and exit.
 
 To install Unicorn, and any outstanding dependencies, run Bundler:
 
-`$bundle`
+`$ bundle`
 
 Unicorn is now installed, but we need to configure it.
 

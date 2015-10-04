@@ -165,6 +165,9 @@ Here’s my setup. I’m running SSL, so there are two server blocks. The “lis
 
 You can use my server block setting here:  [default](../master/default)
 
+Ok, so Nginx is set up. Time to get into the fun stuff.
+
+If you’re looking for a deep dive into Nginx, check out [Mastering Nginx](http://www.amazon.com/gp/product/1849517444/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1849517444&linkCode=as2&tag=mccblo-20&linkId=R4DM5YI4KWFBKXOM).
 
 #### Unicorn
 

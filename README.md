@@ -170,8 +170,6 @@ You can use my server block setting here:  [default](../master/default)
 
 I’m going to assume you know what Unicorn is and why you should use it. 
 
-Install Unicorn
-
 Now we are ready to install Unicorn.
 
 An easy way to do this is to add it to your application's Gemfile. Open the Gemfile in your favorite editor (make sure you are in your application's root directory):
